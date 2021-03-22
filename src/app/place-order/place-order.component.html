@@ -1,0 +1,37 @@
+
+
+
+
+    <body>
+    
+      <br>
+      <br>
+      <div class="container">
+     <form #f="ngForm"  (ngSubmit)="placeOrder()" ngNativeValidate><br>
+     <div class="row" >
+       <div class="col-25">
+      <label for="pName" ><b>Product Name :</b></label>
+     </div>
+     <div class="col-25">
+     <label for="productName" name="productName" style="color: blue;"><b>{{productName}}</b></label>
+  
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-25">
+      <label for="pquan" ><b >AvailableQuantity <b >  ({{availableQuantity}})</b> :</b></label>
+      </div>
+      <div class="col-75">
+      <input type="number" id="orderedQuantity" name="orderedQuantity" [(ngModel)] = "orderedQuantity"
+      ngModel min="1" [max]="availableQuantity" required  (ngModelChange)="isValidOrderedQuantity($event)"  orderedQuantity="check" pattern="[0-9]{1,3}" >
+     
+       </div>
+      </div>
+       <div class="row">
+        <input  class="button" type="submit" value="Order" >
+        </div>
+    </form>
+    </div>
+    </body>
+    <router-outlet></router-outlet>

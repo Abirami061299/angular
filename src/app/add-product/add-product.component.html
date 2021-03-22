@@ -1,0 +1,77 @@
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+
+<body>
+   <br>
+   <br>
+   <div class="container">
+   <div  *ngIf="alertSuccess" class="alert alert-success">
+      <strong>Success!</strong> Product details have been added successfully!. </div>
+    
+      <div *ngIf="alertFailure" class="alert alert-danger">
+        <strong>Error!</strong>  please try again.
+      </div>
+  <h1><strong>Add Products</strong></h1>
+    <form    (ngSubmit)="onSubmit(formData)" #formData="ngForm" ngNativeValidate>
+      <div class="row">
+         <div class="col-25">
+              <label for="productName"><b>Product Name:</b></label>
+         </div>
+         <div class="col-75">
+              <input type="text" id="productName" name="productName" ngModel required maxlength="20"  minlength="3" pattern="^[\t]|[A-Za-z0-9*]{3,20}" #productName="ngModel">
+         </div>
+         <div class="help-block" *ngIf="productName.invalid && (productName.dirty || productName.touched)">
+            <div *ngIf="productName.errors.required">
+               Product Name is required.
+             </div>
+             <div *ngIf="productName.errors.minlength">
+               Product Name must be at least 3 characters long.
+             </div>
+             <div *ngIf="productName.errors.maxlength">
+               Product Name cannot be more than 20 characters long.
+             </div>
+             
+            </div>
+      </div>
+      <div class="row">
+         <div class="col-25">
+            <label for="pquan"><b>AvailableQuantity:</b></label>
+         </div>
+         <div class="col-75">
+           <input type="number" id="pquan" name="availableQuantity" [min]="1"  [max]="15"  ngModel required #availableQuantity="ngModel">
+         </div>
+         <div class="help-block" *ngIf="!availableQuantity.valid && (availableQuantity.touched || availableQuantity.dirty)">
+            <div *ngIf="availableQuantity.errors.required">
+               please,enter the quantity required!
+             </div>
+             <div *ngIf="availableQuantity.errors.min">
+               atleast one quantity should be ordered
+             </div>
+             <div *ngIf="availableQuantity.errors.max">
+               limit exceeding the available quantity
+             </div>
+         </div>
+        </div>
+     <div class="row">
+      <div class="col-25">
+          <label for="pquan"><b>Unit Price:</b></label>
+      </div>
+       <div class="col-75">
+        <input type="number"  id="unitPrice" name="unitPrice" min="1"  max="999999" pattern="[0-9]{1,6}"  ngModel required #unitPrice="ngModel">
+       </div>
+      <span class="help-block" *ngIf="!unitPrice.valid && unitPrice.touched">***please,enter the valid price!***</span>
+        </div>
+        <div class="row">
+         <input  class="button" type="submit" value="Add" >
+      </div>
+            
+    </form>
+    </div>
+  
+    </body>
+    
