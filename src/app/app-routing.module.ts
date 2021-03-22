@@ -12,7 +12,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 const routes: Routes = [
- 
+ {path:'',redirectTo:'/product-list',pathMatch:'full'},
   {path:'add-product',component:AddProductComponent},
   {path:'place-order/:id',component:PlaceOrderComponent},
   {path:'product-updation/:id',component:ProductUpdationComponent},
