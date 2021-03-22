@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
     this.listData.sort=this.sort;
     this.listData.paginator=this.paginator;
       
-  // console.log(this.listData)
+  console.log(this.listData)
      })
      
   }
