@@ -24,8 +24,14 @@
       </div>
       <div class="col-75">
       <input type="number" id="orderedQuantity" name="orderedQuantity" [(ngModel)] = "orderedQuantity"
-      ngModel min="1" [max]="availableQuantity" required  (ngModelChange)="isValidOrderedQuantity($event)"  orderedQuantity="check" pattern="[0-9]{1,3}" >
-     
+      ngModel min="1"  required   orderedQuantity="check"  >
+      <div class="help-block" *ngIf="orderedQuantity>availableQuantity">
+          limit exceeding the Available Quantity.
+          please enter the valid quantity!
+      </div>
+      <div class="help-block" *ngIf="orderedQuantity<=0">
+        order atleast one quantity...
+    </div>
        </div>
       </div>
        <div class="row">

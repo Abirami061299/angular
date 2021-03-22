@@ -21,12 +21,12 @@ export class OrderServiceService {
   
   
   placeOrder(data):Observable<any> {
-    console.log("here from order service"+data)
+  //  console.log("here from order service"+data)
     return this.http.post<any>(orderUrl ,data,{responseType:'text' as 'json'})
  
   }
   getOrderDetails():Observable<any[]>{
-    console.log("from orderservice")
+  //  console.log("from orderservice")
     return this.http.get<any[]>(orderUrl);
     
   }

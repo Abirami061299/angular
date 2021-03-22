@@ -53,15 +53,7 @@ export class PlaceOrderComponent implements OnInit {
 
 
 
-isValidOrderedQuantity(orderedValue){
-  if(this.availableQuantity<orderedValue){
-    swal.fire("limit exceeded the available quantity!!!\nplease enter the required quantity");
-  }
-  else if(orderedValue<1 ){
-    swal.fire(" "+"Order atleast one product to purchase!!!");
-  }
-  
-}
+
 
   
   placeOrder() {
@@ -71,7 +63,7 @@ isValidOrderedQuantity(orderedValue){
       totalPrice:this.unitPrice*this.orderedQuantity
 
     }
-   console.log(order)
+ //  console.log(order)
     this.orderService.placeOrder(order)
       .subscribe((result:any) =>
          {

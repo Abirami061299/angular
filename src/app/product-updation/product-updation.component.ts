@@ -37,21 +37,23 @@ export class ProductUpdationComponent implements OnInit {
          
           this.productName=product["productName"]
           this.productId=product["productId"]
-       //  console.log(this.totalPrice)
-       //  console.log(this.orderedQuantity)
-         //console.log("availableQuantity"+this.availableQuantity)
+        //console.log(product['unitPrice'])
+        // console.log(this.orderedQuantity)
+        // console.log("availableQuantity"+this.availableQuantity)
         }
       })
     })
   }
 
   onSubmit(formData:any){
-  //  console.log(formData.value)
+  // console.log(formData)
     this.productService.updateProduct(this.productId,formData.value)
+
     .subscribe((result:any) =>
        {
-       //  console.log(result)
+      
         this.alertSuccess=true;
+
     },
     (error)=>{
       //console.log(error)

@@ -33,12 +33,12 @@ export class ProductServiceService {
   }
 
   deleteProduct(productId:string):Observable<any>{
-    console.log(productId)
+   // console.log(productId)
       return this.http.delete<string>(productUrl+'/'+productId)
   }
 
   updateProduct(productId:string,data:any):Observable<any>{
-     console.log(productId)
+    // console.log(productId)
     return this.http.put<any>(productUrl+'/'+productId,data);
   }
 
