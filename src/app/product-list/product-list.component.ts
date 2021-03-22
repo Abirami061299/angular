@@ -8,7 +8,7 @@ import{MatDialog,MatDialogConfig,MatDialogRef, MAT_DIALOG_DATA} from '@angular/m
 import {MatSort} from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { AddProductComponent } from '../add-product/add-product.component';
-import { NewProductComponent } from '../new-product/new-product.component';
+
 
 
 @Component({

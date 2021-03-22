@@ -7,7 +7,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { ProductUpdationComponent } from './product-updation/product-updation.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { NewProductComponent } from './new-product/new-product.component';
+
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'place-order/:id',component:PlaceOrderComponent},
   {path:'product-updation/:id',component:ProductUpdationComponent},
   {path:'product-list',component:ProductListComponent},
-  {path:'new-product',component:NewProductComponent},
+  
   {path:'order-summary',component:OrderSummaryComponent},
   
 ];
@@ -27,4 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[AddProductComponent,PlaceOrderComponent,ProductUpdationComponent,ProductListComponent,NewProductComponent,OrderSummaryComponent]
+export const routingComponents=[AddProductComponent,PlaceOrderComponent,ProductUpdationComponent,ProductListComponent,OrderSummaryComponent]
