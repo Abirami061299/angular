@@ -34,7 +34,7 @@ export class OrderSummaryComponent implements OnInit {
      this.listData=new MatTableDataSource(orderSummaryList);
     this.listData.sort=this.sort;
     this.listData.paginator=this.paginator;
-    console.log("order details"+this.listData)
+   // console.log("order details"+this.listData)
      });
      
   }
