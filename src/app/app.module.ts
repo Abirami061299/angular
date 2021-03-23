@@ -21,41 +21,19 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
-import { NewProductComponent } from './new-product/new-product.component';
+
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-   
-   
-    
     AddProductComponent,
-    
     PlaceOrderComponent,
-    
     ProductUpdationComponent,
-    
-    
-    
     ProductListComponent,
-    
-    
-    
-    NewProductComponent,
-    
-    
-    
     OrderSummaryComponent
     
-    
-    
-   
-    
- 
-    
-  
   ],
   imports: [
     BrowserModule,
@@ -69,14 +47,14 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
-   MatSelectModule,
-   MatDialogModule,
+    MatSelectModule,
+    MatDialogModule,
     MatIconModule,
     ReactiveFormsModule
     
   ],
   providers: [ProductServiceService,OrderServiceService ],
-  bootstrap: [AppComponent,PlaceOrderComponent,ProductUpdationComponent,AddProductComponent,NewProductComponent,OrderSummaryComponent],
+  bootstrap: [AppComponent,PlaceOrderComponent,ProductUpdationComponent,AddProductComponent,OrderSummaryComponent],
   entryComponents:[AddProductComponent]
 })
 export class AppModule { }

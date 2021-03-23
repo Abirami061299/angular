@@ -4,6 +4,6 @@ export interface orders{
     orderedDate:Date,
     deliveryDate:Date,
     quantity:number,
-     totalPrice:number
+    totalPrice:number
    
    };
