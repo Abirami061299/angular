@@ -47,8 +47,8 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
-   MatSelectModule,
-   MatDialogModule,
+    MatSelectModule,
+    MatDialogModule,
     MatIconModule,
     ReactiveFormsModule
     

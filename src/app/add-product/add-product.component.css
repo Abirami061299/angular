@@ -41,12 +41,15 @@ input[type=submit]:hover {
   float: left;
   width: 25%;
   margin-top: 6px;
+  margin-bottom: 15px;
+  
 }
 
 .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
+
 }
 
 /* Clear floats after the columns */
@@ -70,6 +73,7 @@ input.ng-invalid.ng-touched.ng-dirty{
 
 .help-block{
   color:red;
+  
 }
 h1{
   color:red;

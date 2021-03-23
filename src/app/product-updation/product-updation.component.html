@@ -1,61 +1,80 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
 <body>
-    <br>
-    <br>
-    <div  *ngIf="alertSuccess" class="alert alert-success">
-      <strong>Success!</strong> Product details have been updated successfully!. </div>
-    
-      <div *ngIf="alertFailure" class="alert alert-danger">
-        <strong>Error!</strong>  please try again.
-      </div>
-    
-    
-     <div class="container">
-       <h1><strong>Edit Product Details</strong></h1>
-     <form    (ngSubmit)="onSubmit(formData)"  #formData="ngForm" ngNativeValidate>
-       <div class="row">
-          <div class="col-25">
-               <label for="productName"><b>Product Name:</b></label>
-          </div>
-          <div class="col-75">
-               <input type="text" id="productName" name="productName"  [(ngModel)]="product['productName']" ngModel required maxlength="20"  minlength="3" pattern="^[\t]|[A-Za-z0-9*]{3,20}" #productName="ngModel">
-              
-          </div>
-          <span class="help-block" *ngIf="!productName.valid && productName.touched">please,enter a valid Product Name!</span>
-       </div>
-       <div class="row">
-          <div class="col-25">
-             <label for="pquan"><b>AvailableQuantity:</b></label>
-          </div>
-          <div class="col-75">
-           <input type="number" id="pquan" name="availableQuantity"   [(ngModel)]="product['availableQuantity']" min="1"  max="15" pattern="[0-9]{1,3}" ngModel required #availableQuantity="ngModel">
-            
-        </div>
-          
-          <span class="help-block" *ngIf="!availableQuantity.valid && availableQuantity.touched">please,enter the quantity required!</span>
-         </div>
+  <br>
+  <br>
+  <div *ngIf="alertSuccess" class="alert alert-success">
+    <strong>Success!</strong> Product details have been updated successfully!.
+  </div>
+
+  <div *ngIf="alertFailure" class="alert alert-danger">
+    <strong>Error!</strong> please try again.
+  </div>
+
+
+  <div class="container">
+    <h1><strong>Edit Product Details</strong></h1>
+    <form (ngSubmit)="onSubmit(formData)" #formData="ngForm" ngNativeValidate>
       <div class="row">
-       <div class="col-25">
-           <label for="pquan"><b>Unit Price:</b></label>
-       </div>
-        <div class="col-75">
-            <input type="number"  id="unitPrice" name="unitPrice"   [(ngModel)]="product['unitPrice']" min="1"  max="999999" pattern="[0-9]{1,6}"  ngModel required #unitPrice="ngModel">
-            
+        <div class="col-25">
+          <label for="productName"><b>Product Name:</b></label>
         </div>
-       <span class="help-block" *ngIf="!unitPrice.valid && unitPrice.touched">***please,enter the valid price!***</span>
-         </div>
-         <div class="row">
-          <input  class="button" type="submit" value="Save Changes" >
-       </div>
-             
-     </form>
-   </div>
-     </body>
-     <router-outlet></router-outlet>
- 
+        <div class="col-75">
+          <input type="text" id="productName" name="productName" [(ngModel)]="product['productName']" ngModel required
+            maxlength="20" minlength="3" pattern="^[^\s*]([A-Za-z\s*]|[A-Za-z0-9\s*]){3,20}" #productName="ngModel">
+
+        </div>
+        <div class="help-block" *ngIf="!productName.valid && productName.touched">
+          <div *ngIf="productName.errors.required">
+            Product Name is required.
+          </div>
+          <div *ngIf="productName.errors.minlength">
+            Product Name must be at least 3 characters long.
+          </div>
+          <div *ngIf="productName.errors.maxlength">
+            Product Name cannot be more than 20 characters long.
+          </div>
+          <div *ngIf="productName.errors.pattern">
+            Product Name should only contain alphanumeric characters
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="pquan"><b>AvailableQuantity:</b></label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="pquan" name="availableQuantity" [(ngModel)]="product['availableQuantity']" min="1"
+            max="15" pattern="[0-9]{1,3}" ngModel required #availableQuantity="ngModel">
+
+        </div>
+
+        <span class="help-block" *ngIf="!availableQuantity.valid && availableQuantity.touched">please,enter the quantity
+          required!</span>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="pquan"><b>Unit Price:</b></label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="unitPrice" name="unitPrice" [(ngModel)]="product['unitPrice']" min="1" max="999999"
+            pattern="[0-9]{1,6}" ngModel required #unitPrice="ngModel">
+
+        </div>
+        <span class="help-block" *ngIf="!unitPrice.valid && unitPrice.touched">***please,enter the valid
+          price!***</span>
+      </div>
+      <div class="row">
+        <input class="button" type="submit" value="Save Changes">
+      </div>
+
+    </form>
+  </div>
+</body>
+<router-outlet></router-outlet>

@@ -18,7 +18,8 @@ export class ProductUpdationComponent implements OnInit {
   
   public alertSuccess: boolean;
   public alertFailure:boolean;
-  constructor(private orderService:OrderServiceService,private productService:ProductServiceService,private activatedRoute: ActivatedRoute) { }
+  constructor(private orderService:OrderServiceService,private productService:ProductServiceService,
+             private activatedRoute: ActivatedRoute) { }
 
   
 
@@ -32,34 +33,23 @@ export class ProductUpdationComponent implements OnInit {
         if (product.productId == this.productId) {
           this.product = product;
           this.unitPrice=product["unitPrice"]
-         
           this.availableQuantity=product["availableQuantity"]
-         
           this.productName=product["productName"]
           this.productId=product["productId"]
-        //console.log(product['unitPrice'])
-        // console.log(this.orderedQuantity)
-        // console.log("availableQuantity"+this.availableQuantity)
         }
       })
     })
   }
 
   onSubmit(formData:any){
-  // console.log(formData)
     this.productService.updateProduct(this.productId,formData.value)
-
     .subscribe((result:any) =>
        {
-      
-        this.alertSuccess=true;
-
-    },
+       this.alertSuccess=true;
+      },
     (error)=>{
-      //console.log(error)
-        this.alertFailure=false;
-      
-    }
+       this.alertFailure=false;
+      }
     )  
   }
 

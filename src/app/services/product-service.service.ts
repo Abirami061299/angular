@@ -27,22 +27,15 @@ export class ProductServiceService {
   }
 
   postData(data:any):Observable<any> {
-   // console.log("from product service"+data)
     return this.http.post<any>(productUrl ,data,{responseType:'text' as 'json'})
- 
-  }
+ }
 
   deleteProduct(productId:string):Observable<any>{
-   // console.log(productId)
-      return this.http.delete<string>(productUrl+'/'+productId)
+   return this.http.delete<string>(productUrl+'/'+productId)
   }
 
   updateProduct(productId:string,data:any):Observable<any>{
-    // console.log(productId)
     return this.http.put<any>(productUrl+'/'+productId,data);
   }
 
-  
-
-  
 }

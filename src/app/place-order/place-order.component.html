@@ -1,43 +1,36 @@
-
-
-
-
-    <body>
-    
-      <br>
-      <br>
-      <div class="container">
-     <form #f="ngForm"  (ngSubmit)="placeOrder()" ngNativeValidate><br>
-     <div class="row" >
-       <div class="col-25">
-      <label for="pName" ><b>Product Name :</b></label>
-     </div>
-     <div class="col-25">
-     <label for="productName" name="productName" style="color: blue;"><b>{{productName}}</b></label>
-  
+<body>
+  <br>
+  <br>
+  <div class="container">
+    <form #f="ngForm" (ngSubmit)="placeOrder()" ngNativeValidate><br>
+      <div class="row">
+        <div class="col-25">
+          <label for="pName"><b>Product Name :</b></label>
+        </div>
+        <div class="col-25">
+          <label for="productName" name="productName"><b>{{productName}}</b></label>
+        </div>
       </div>
-    </div>
 
       <div class="row">
         <div class="col-25">
-      <label for="pquan" ><b >AvailableQuantity <b >  ({{availableQuantity}})</b> :</b></label>
-      </div>
-      <div class="col-75">
-      <input type="number" id="orderedQuantity" name="orderedQuantity" [(ngModel)] = "orderedQuantity"
-      ngModel min="1"  required   orderedQuantity="check"  >
-      <div class="help-block" *ngIf="orderedQuantity>availableQuantity">
-          limit exceeding the Available Quantity.
-          please enter the valid quantity!
-      </div>
-      <div class="help-block" *ngIf="orderedQuantity<=0">
-        order atleast one quantity...
-    </div>
-       </div>
-      </div>
-       <div class="row">
-        <input  class="button" type="submit" value="Order" >
+          <label for="pquan"><b>AvailableQuantity <b> ({{availableQuantity}})</b> :</b></label>
         </div>
+        <div class="col-75">
+          <input type="number" id="orderedQuantity" name="orderedQuantity" [(ngModel)]="orderedQuantity" 
+          ngModel min="1" required orderedQuantity="check">
+          <div class="help-block" *ngIf="orderedQuantity>availableQuantity">
+            limit exceeding the Available Quantity.
+            please enter the valid quantity!
+          </div>
+          <div class="help-block" *ngIf="orderedQuantity<=0">
+            order atleast one quantity...
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <input class="button" type="submit" value="Order">
+      </div>
     </form>
-    </div>
-    </body>
-    <router-outlet></router-outlet>
+  </div>
+</body>

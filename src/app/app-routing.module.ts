@@ -17,7 +17,6 @@ const routes: Routes = [
   {path:'place-order/:id',component:PlaceOrderComponent},
   {path:'product-updation/:id',component:ProductUpdationComponent},
   {path:'product-list',component:ProductListComponent},
-  
   {path:'order-summary',component:OrderSummaryComponent},
   
 ];
@@ -27,4 +26,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[AddProductComponent,PlaceOrderComponent,ProductUpdationComponent,ProductListComponent,OrderSummaryComponent]
+export const routingComponents=[AddProductComponent,PlaceOrderComponent,ProductUpdationComponent,
+                                ProductListComponent,OrderSummaryComponent]
