@@ -51,7 +51,8 @@ deleteProduct(productId:string){
 
 applyFilter(filterValue:any){
    
-// lowercase conversion
+/* lowercase conversion
+    comment is enabled*/
     this.listData.filter=filterValue.trim().toLowerCase();
 }
   
