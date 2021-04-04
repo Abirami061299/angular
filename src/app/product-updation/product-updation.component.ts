@@ -49,7 +49,7 @@ export class ProductUpdationComponent implements OnInit {
       },
     (error)=>{
        this.alertFailure=false;
-      // console.log("error")
+       console.log("error")
       }
     )  
   }

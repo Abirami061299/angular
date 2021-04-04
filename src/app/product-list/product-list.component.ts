@@ -50,6 +50,7 @@ deleteProduct(productId:string){
   }
 
 applyFilter(filterValue:any){
+  // comment added for the first time
     this.listData.filter=filterValue.trim().toLowerCase();
 }
   
