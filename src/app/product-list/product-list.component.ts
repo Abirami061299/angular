@@ -51,7 +51,7 @@ deleteProduct(productId:string){
 
 applyFilter(filterValue:any){
    
-   //comment enabled
+   
     this.listData.filter=filterValue.trim().toLowerCase();
 }
   
